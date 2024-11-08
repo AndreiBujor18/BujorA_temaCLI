@@ -1,0 +1,54 @@
+⚫ Ce este un viewport? 
+    Un viewport este zona din fereastra de afișare unde sunt desenate obiectele 3D. 
+	În OpenGL, acesta este definit prin coordonatele colțului din stânga jos și dimensiunile pe axele X și Y (lățime și înălțime). 
+	Viewport-ul asigură transformarea coordonatelor normalizate din spațiul clip în coordonatele ferestrei, 
+	astfel încât scenele să fie afișate corect pe ecran.
+    
+⚫ Ce reprezintă conceptul de frames per seconds din punctul de vedere al bibliotecii OpenGL? 
+    Frames per second (FPS) indică numărul de cadre generate și afișate pe ecran într-o secundă. 
+	În OpenGL, FPS reflectă viteza cu care motorul grafic poate reda și actualiza scena într-un interval de timp dat. 
+	Un FPS mai mare înseamnă o redare mai fluidă și rapidă a graficii, însă acesta depinde de eficiența codului, 
+	complexitatea scenei și performanța hardware-ului.
+    
+⚫ Când este rulată metoda OnUpdateFrame()? 
+	Metoda `OnUpdateFrame()` este executată la fiecare ciclu de actualizare al aplicației, înainte de redarea cadrului. 
+	În această metodă se pot actualiza datele logice ale aplicației, cum ar fi mișcarea obiectelor, 
+	gestionarea interacțiunilor utilizatorului sau alte calcule care influențează starea scenei, 
+	fără a implica procesul de randare propriu-zis.
+ 
+⚫ Ce este modul imediat de randare? 
+	Modul imediat de randare în OpenGL este o metodă învechită și ineficientă de a desena obiecte, 
+	trimițând comenzi direct către placa video pentru fiecare vertex. 
+	Acest mod utilizează funcții precum `glBegin()` și `glEnd()` pentru a defini primitivele (triunghiuri, linii, puncte)
+	și trimite coordonatele vertex la fiecare apel de funcție. 
+	Nu este recomandat, deoarece este mult mai lent în comparație cu tehnici moderne, 
+	cum ar fi utilizarea bufferelor de vertecși (vertex buffers).
+ 
+⚫ Care este ultima versiune de OpenGL care acceptă modul imediat? 
+	Modul imediat de randare a fost depreciat odată cu OpenGL 3.0 și eliminat din profilul core începând 
+	cu OpenGL 3.1. Cu toate acestea, profilul **compatibility** din OpenGL permite încă utilizarea acestui mod în 
+	versiunile mai noi pentru a asigura compatibilitatea cu aplicațiile mai vechi.
+
+⚫ Când este rulată metoda OnRenderFrame()? 
+	Metoda `OnRenderFrame()` este executată la fiecare ciclu de randare, după ce datele logice au fost actualizate în `OnUpdateFrame()`. 
+	Aceasta se ocupă de redarea propriu-zisă a scenei, trimițând comenzile de desenare către GPU pentru a afișa 
+	obiectele 3D pe ecran. Aici sunt apelate funcțiile OpenGL necesare pentru generarea cadrului vizual.
+ 
+⚫ De ce este nevoie ca metoda OnResize() să fie executată cel puțin o dată? 
+	Metoda `OnResize()` trebuie executată cel puțin o dată pentru a ajusta corect dimensiunile și proporțiile 
+	viewport-ului și ale proiecției în funcție de dimensiunea ferestrei. 
+	Când fereastra este redimensionată, matricea de proiecție trebuie recalculată pentru a 
+	preveni distorsiuni și pentru a asigura un aspect corespunzător al obiectelor afișate, în funcție de noua rezoluție.
+ 
+⚫ Ce reprezintă parametrii metodei CreatePerspectiveFieldOfView() și care este domeniul de valori pentru aceștia?
+	Metoda `CreatePerspectiveFieldOfView()` generează o matrice de proiecție pentru o cameră cu perspectivă, 
+	iar principalii săi parametri sunt:
+-fieldOfView: unghiul câmpului vizual pe verticală, exprimat în radiani. 
+	Valorile tipice variază între 0.1 și π (aproximativ 5° și 180°), cu valori obișnuite între 45° și 90°.
+-aspectRatio: raportul dintre lățimea și înălțimea viewport-ului (rezoluția ferestrei). 
+	Este o valoare pozitivă, de obicei egală cu raportul dimensiunilor ferestrei.
+-nearPlane: distanța minimă de la cameră la care începe să fie vizibilă scena. 
+	Aceasta trebuie să fie pozitivă și relativ mică (de exemplu, 0.1 sau 1.0).
+-arPlane: distanța maximă până la care sunt afișate obiectele. 
+	Aceasta trebuie să fie mai mare decât `nearPlane` și poate avea valori mari, cum ar fi 1000 sau mai mult, în funcție de scenă.
+    Acești parametri determină câmpul vizual al camerei, zona vizibilă și distanțele la care obiectele apar și dispar din cadru.

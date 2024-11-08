@@ -1,0 +1,43 @@
+⚫ 2. Ce este anti-aliasing?
+	Anti-aliasing este o tehnică utilizată în grafică computerizată pentru a reduce efectul de 
+	„muchii zimțate” (aliasing), care apare atunci când liniile sau contururile sunt desenate la 
+	o rezoluție scăzută. Acest efect este observabil prin margini aspre sau pixelate.
+	Cum funcționează? Anti-aliasing-ul funcționează prin amestecarea culorilor pixelilor de la marginea 
+	unui obiect pentru a crea o tranziție mai lină între culori, oferind astfel iluzia unor margini mai netede.
+
+⚫ 3. Efectul comenzilor GL.LineWidth(float) și GL.PointSize(float)
+	- GL.LineWidth(float): Această comandă stabilește lățimea liniilor desenate. 
+	De exemplu, `glLineWidth(2.0f)` va dubla lățimea liniei implicite. 
+	Funcționează în interiorul unui bloc `GL.Begin()`, dar este posibil ca nu toate plăcile grafice să accepte toate valorile de lățime.
+	- GL.PointSize(float): Această comandă setează dimensiunea punctelor desenate. 
+	De exemplu, `glPointSize(5.0f)` va mări punctele de cinci ori față de dimensiunea implicită. 
+	La fel ca `GL.LineWidth`, funcționează în interiorul unui bloc `GL.Begin()`.
+
+⚫ 4. Efectul directivelor de desenare
+	- LineLoop: Folosind `GL.LineLoop`, se creează o linie închisă prin conectarea ultimului vertex cu primul, 
+	fiind utilă pentru desenarea poligoanelor închise.
+	- LineStrip: `GL.LineStrip` desenează o serie de linii conectate, utilizând vertexurile în ordinea specificată, 
+	formând astfel o linie continuă.
+	- TriangleFan: `GL.TriangleFan` permite desenarea unui set de triunghiuri care împărtășesc un vertex comun, 
+	eficient pentru crearea de forme convexe.
+	- TriangleStrip:** Similar cu `TriangleFan`, `GL.TriangleStrip` creează triunghiuri folosind un set suplimentar de vertexuri, 
+	potrivit pentru forme complexe cu mai puține vertexuri.
+
+⚫ 6. Importanța culorilor în desenarea obiectelor 3D
+	Utilizarea culorilor diferite (gradienți sau culori selectate pentru fiecare suprafață) este esențială 
+	pentru un efect vizual plăcut și o percepție îmbunătățită a profunzimii. Culorile evidențiază detalii și forme, 
+	permițând spectatorilor să observe mai bine volumul și textura obiectelor 3D.
+
+⚫ 7. Ce este un gradient de culoare?
+	Un gradient de culoare reprezintă o tranziție lină între două sau mai multe culori. 
+	În OpenGL, acest efect se obține prin interpolarea culorilor între vertexuri, amestecându-le pentru a crea un efect de tranziție.
+
+⚫ 8. Ce este transparența în OpenGL?
+	Transparența este controlată de canalul alpha, care are valori între 0 și 1 
+	(unde 0 reprezintă transparență completă și 1 reprezintă opacitate completă). 
+	Utilizarea canalului de transparență permite ca obiectele să se vadă parțial prin altele, oferind un efect de suprapunere vizuală.
+
+⚫ 10. Efectul utilizării unei culori diferite pentru fiecare vertex
+	Atunci când aplici culori diferite fiecărui vertex în modul strip sau la desenarea triunghiurilor, 
+	OpenGL creează un gradient între acele culori. Astfel, culoarea este interpolată lin 
+	între vertexuri, generând o tranziție armonioasă de la o culoare la alta pe suprafața obiectului.
