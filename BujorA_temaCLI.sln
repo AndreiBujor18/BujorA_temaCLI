@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BujorA_temaCLI", "BujorA_temaCLI\BujorA_temaCLI.csproj", "{0A3034AD-5E64-4E5F-A794-73B373BCD880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tema4", "tema4\tema4.csproj", "{013D42DC-108B-4862-8881-D76EFF609C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tema5", "tema5\tema5.csproj", "{7C9E1BE3-0431-4116-A1C5-81F6BE427677}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A3034AD-5E64-4E5F-A794-73B373BCD880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3034AD-5E64-4E5F-A794-73B373BCD880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3034AD-5E64-4E5F-A794-73B373BCD880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3034AD-5E64-4E5F-A794-73B373BCD880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013D42DC-108B-4862-8881-D76EFF609C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013D42DC-108B-4862-8881-D76EFF609C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013D42DC-108B-4862-8881-D76EFF609C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013D42DC-108B-4862-8881-D76EFF609C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9E1BE3-0431-4116-A1C5-81F6BE427677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9E1BE3-0431-4116-A1C5-81F6BE427677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9E1BE3-0431-4116-A1C5-81F6BE427677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9E1BE3-0431-4116-A1C5-81F6BE427677}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {701453A8-FBF5-4759-8A43-B0C0D7D9FD2C}
+	EndGlobalSection
+EndGlobal
